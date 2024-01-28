@@ -1,0 +1,12 @@
+{
+    "name": "poc-npm",
+    "version": "1.3.37",
+    "description": "PoC npm package.",
+    "main": "index.js",
+    "scripts": {
+      "test": "",
+      "preinstall": "node index.js"
+    },
+    "author": "",
+    "license": "ISC"
+  }

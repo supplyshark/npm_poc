@@ -3,7 +3,7 @@
 This PoC package shows how arbitrary system commands and JavaScript code can be executed
 when a malicious npm package is installed.
 
-[![Video demo]](https://youtu.be/hFtL_4gvqog)
+[Video demo](https://youtu.be/hFtL_4gvqog)
 
 You can reproduce the proof of impact PoC from the video by following these steps:
 

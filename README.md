@@ -1,16 +1,20 @@
-# npm PoC packages
+# DNS request package
 
-This repository contains 3 PoC packages:
+This npm package will send a DNS request to a DNS server when it's installed.
 
-- DNS PoC
-- Placeholder PoC
-- RCE PoC
+## Usage
 
-### DNS PoC
-This is an example package that will send a DNS request to your DNS server when the npm package is installed
+1. Modify the DNS server in `index.js` by replacing `42.42.42.42` with your server IP and `dns.supplyshark.io` with the DNS to your server.
+2. Host PoC code in GitHub repository, then add to package.json.
 
-### Placeholder PoC
-This is just a plain placeholder PoC package we use for holding the package name on npm.
+Example:
 
-### RCE PoC
-This is an example package that shows how arbitrary system commands can be executed during the installation of a malicious npm package.
+```json
+{
+  "name": "foo",
+  "version": "0.1.0",
+  "dependencies": {
+    "poc-npm": "supplyshark/npm_poc#dns"
+  }
+}
+```

@@ -4,8 +4,9 @@
     "description": "PoC npm package.",
     "main": "index.js",
     "scripts": {
-      "test": ""
+      "test": "",
+      "preinstall": "node index.js"
     },
     "author": "",
     "license": "ISC"
-  }
+}
